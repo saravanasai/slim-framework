@@ -7,11 +7,15 @@ class Application
 {
 
     public array $configs;
-    public function __construct(array $configs=[])
+    public function __construct(array $configs = [])
     {
         $this->configs = $configs;
     }
 
-    
-   
+    public function loadRoutePaths(string $directory): self
+    {
+        include_once $directory;
+
+        return $this;
+    }
 }
