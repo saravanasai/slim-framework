@@ -2,15 +2,17 @@
 
 namespace App\Http;
 
+use Illuminate\Framework\Request;
+
 class HomeController
 {
-    public function index($variables)
+    public function index(Request $request)
     {
         echo "I love Laravel";
     }
 
-    public function show($variables)
+    public function show(Request $request)
     {
-        var_dump($variables);
+        dd($request->get('id'));
     }
 }

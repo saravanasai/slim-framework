@@ -54,7 +54,7 @@ class Route
             } else {
                 [$controller, $method] = $cb;
                 $instance = new $controller();
-                call_user_func_array([$instance, $method], [$urlProps]);
+                call_user_func_array([$instance, $method], [new Request($urlProps)]);
             }
         }
     }

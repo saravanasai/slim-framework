@@ -48,6 +48,10 @@ class Request
         return $decoded;
     }
 
+    public function get(string $key)
+    {
+       return $this->params[$key] ?? null;
+    }
     private function load()
     {
         foreach ($this->params as $attribute => $value) {
