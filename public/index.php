@@ -12,4 +12,5 @@ $app = (new Application(
     $_SERVER['DB_NAME'],
     $_SERVER['DB_USERNAME'],
     $_SERVER['DB_PASSWORD']
-))->loadRoutePaths(__DIR__ . "/../routes/web.php");
+))->loadRoutePaths(__DIR__ . "/../routes/web.php")
+    ->loadViewPaths(__DIR__ . "/../views");

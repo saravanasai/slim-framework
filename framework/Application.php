@@ -11,6 +11,8 @@ class Application
 {
     public static $Db;
 
+    public static $viewDirectory;
+
     public function  __construct($servername, $dbname, $username, $password)
     {
 
@@ -31,6 +33,13 @@ class Application
     public function loadRoutePaths(string $directory): self
     {
         include_once $directory;
+
+        return $this;
+    }
+
+    public function loadViewPaths(string $directory): self
+    {
+        static::$viewDirectory = $directory;
 
         return $this;
     }
