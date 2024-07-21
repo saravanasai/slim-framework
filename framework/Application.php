@@ -23,10 +23,15 @@ class Application
         }
     }
 
-
-
     public static function DB(): \PDO
     {
         return static::$Db;
+    }
+
+    public function loadRoutePaths(string $directory): self
+    {
+        include_once $directory;
+
+        return $this;
     }
 }
